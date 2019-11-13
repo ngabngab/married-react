@@ -5,6 +5,17 @@
     align-items: center;
     background-color: var(--color-black);
     padding: 0 10%;
+    overflow-x: hidden;
+
+    &.zoom-out {
+        background-color: transparent;
+        transition: background-color 2s ease-in-out 1s;
+        svg {
+            transform: scale(2);
+            opacity: 0;
+            transition: transform 2s ease-in-out, opacity 1s ease-in-out 1s;
+        }
+    }
 
     svg {
         width: 100%;
