@@ -3,3 +3,13 @@
         stroke-dashoffset: 0;
     }
 }
+
+@keyframes backdropAnimation {
+    0% {
+        backdrop-filter: blur(10px);
+    }
+
+    100% {
+        backdrop-filter: blur(0);
+    }
+}

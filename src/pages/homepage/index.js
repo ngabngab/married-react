@@ -1,20 +1,31 @@
-import React, {useEffect, useRef} from 'react'
-import {ReactComponent as NameIconSvg} from '../../assets/img/name.svg'
+import React, { useEffect, useRef, useState } from 'react'
+import { ReactComponent as NameIconSvg } from '../../assets/img/name.svg'
+import HeroComponent from '../../components/HeroComponent'
 
 const HomePage = () => {
 
   const preLoadingScreenContainer = useRef();
 
+  const [imgOpener, setImageOpener] = useState(true)
+
   useEffect(() => {
     setTimeout(() => {
       preLoadingScreenContainer.current.classList.add('zoom-out')
+      setTimeout(() => {
+        setImageOpener(false)
+      }, 2000)
     }, 6000);
   }, [])
 
   return (
-      <div className="pre-loading-screen" ref={preLoadingScreenContainer}>
-        <NameIconSvg />
-      </div>
+    <React.Fragment>
+      <main>
+        { imgOpener ? <div className="pre-loading-screen" ref={preLoadingScreenContainer}>
+          <NameIconSvg />
+        </div> :  
+        <HeroComponent /> }
+      </main>
+    </React.Fragment>
   )
 }
 
