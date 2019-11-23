@@ -10,7 +10,7 @@ const HeroComponent = () => {
       <section className="hero-container">
         <div className="img-wrapper">
           <img srcSet={`${BgHero375} 400w, ${BgHero1024} 720w, ${BgHero1366} 1200w`} sizes="(max-width: 400px) 360px, (max-width: 720px) 680px, 1200px"
-            src={BgHero1920} alt="heroImage" />
+            src={BgHero1920} alt="heroImage" loading="lazy"/>
         </div>
         <div className="hero-text">
           <div className="container">

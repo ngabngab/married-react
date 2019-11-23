@@ -2,8 +2,11 @@
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    font-size: calculateRem(20px);
+    @include media-breakpoint-down(xs) {
+        font-size: 1rem;
+    }
     &.btn-primary {
-        font-size: calculateRem(20px);
         color: var(--color-cream-white);
         background-color: var(--color-green-primary);
         border: none;
