@@ -1,0 +1,21 @@
+.header-top {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    backdrop-filter: blur(10px);
+    padding: calculateRem(40px) 0;
+    @include media-breakpoint-down(md) {
+        background: transparent linear-gradient(90deg, #342D2DE6 0%, #77727270 100%);
+    }
+    @include media-breakpoint-down(sm) {
+        padding: 1rem 0;
+    }
+
+    .logo-wrapper {
+        img {
+            @include media-breakpoint-down(xs) {
+                max-width: calculateRem(60px);
+            }
+        }
+    }
+}

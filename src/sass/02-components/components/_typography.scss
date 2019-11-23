@@ -1,0 +1,17 @@
+.title {
+    font-weight: bold;
+    font-size: calculateRem(64px);
+    color: var(--color-cream-white);
+    @include media-breakpoint-down(sm) {
+        font-size: calculateRem(28px);
+    }
+}
+
+.subtitle {
+    font-weight: normal;
+    font-size: calculateRem(36px);
+    color: var(--color-cream-white);
+    @include media-breakpoint-down(sm) {
+        font-size: calculateRem(20px);
+    }
+}

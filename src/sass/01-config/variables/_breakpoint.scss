@@ -7,9 +7,10 @@ $enable-hover-media-query: false;
 $enable-grid-classes: true;
 $enable-print-styles: true;
 
-$container-max-widths: (sm: 500px,
-    md: 600px,
-    lg: 792px,
+$container-max-widths: (
+    sm: 600px,
+    md: 700px,
+    lg: 920px,
     xl: 1020px,
     ll: 1140px,
     xxl: 1240px,

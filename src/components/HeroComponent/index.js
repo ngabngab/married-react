@@ -9,15 +9,24 @@ const HeroComponent = () => {
     <React.Fragment>
       <section className="hero-container">
         <div className="img-wrapper">
-          {/* <img src={ BgHero1366 } alt="" /> */}
-          <img srcset={`${BgHero375} 400w,
-             ${BgHero1024} 720w,
-             ${BgHero1366} 1200w`}
-            sizes="(max-width: 400px) 360px,
-                (max-width: 720px) 680px,
-              1200px"
-            src={BgHero1920} alt="heroImage" />        
-     </div>
+          <img srcSet={`${BgHero375} 400w, ${BgHero1024} 720w, ${BgHero1366} 1200w`} sizes="(max-width: 400px) 360px, (max-width: 720px) 680px, 1200px"
+            src={BgHero1920} alt="heroImage" />
+        </div>
+        <div className="hero-text">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h1 className="title">We're getting married</h1>
+              </div>
+              <div className="col-12">
+                <h2 className="subtitle">Saturday, 7 december 2019</h2>
+              </div>
+              <div className="col-12">
+                <button className="btn btn-primary">Go to location</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </React.Fragment>
   )
