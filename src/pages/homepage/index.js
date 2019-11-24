@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ReactComponent as NameIconSvg } from '../../assets/img/name.svg'
 import HeroComponent from '../../components/HeroComponent'
 import HeaderNav from '../../components/HeaderNav'
+import MapComponent from '../../components/MapComponent'
 
 const HomePage = () => {
 
@@ -20,12 +21,16 @@ const HomePage = () => {
 
   return (
     <React.Fragment>
-      { !imgOpener ? <HeaderNav /> : '' }
+      {!imgOpener ? <HeaderNav /> : ''}
       <main>
-        { imgOpener ? <div className="pre-loading-screen" ref={preLoadingScreenContainer}>
+        {imgOpener ? <div className="pre-loading-screen" ref={preLoadingScreenContainer}>
           <NameIconSvg />
-        </div> :  
-        <HeroComponent /> }
+        </div> :
+          <React.Fragment>
+            <HeroComponent />
+            <MapComponent />
+          </React.Fragment>
+        }
       </main>
     </React.Fragment>
   )

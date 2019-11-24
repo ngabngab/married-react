@@ -14,9 +14,6 @@
         height: 100%;
         top: 0;
         left: 0;
-        @include media-breakpoint-down(md) {
-            height: auto;
-        }
 
         &:before {
             content: '';
@@ -49,6 +46,7 @@
         position: relative;
         z-index: 1;
         object-position: top right;
+        background-color: var(--color-black);
 
         @include media-breakpoint-down(md) {
             object-fit: contain;
@@ -62,6 +60,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    padding-top: calculateRem(32px);
+    padding-bottom: calculateRem(32px);
     @include media-breakpoint-down(md) {
         position: relative;
         top: unset;
@@ -71,7 +71,6 @@
         margin-bottom: calculateRem(16px);
         @include media-breakpoint-down(md) {
             margin-bottom: calculateRem(8px);
-            margin-top: calculateRem(32px);
         }
     }
 
