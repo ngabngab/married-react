@@ -10,6 +10,8 @@
     }
 
     .location-container {
+        display: inline-flex;
+        flex-direction: column;
         &:not(:first-child) {
             margin-top: calculateRem(32px);
             @include media-breakpoint-down(sm) {
@@ -34,6 +36,10 @@
             @include media-breakpoint-down(sm) {
                 font-size: calculateRem(18px);
             }
+        }
+
+        .btn {
+            margin-top: auto;
         }
     }
 

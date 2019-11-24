@@ -6,7 +6,7 @@ const MapComponent = ({ google }) => {
   const [latlng, setLatLng] = useState({ lat: -6.2446969, lng: 106.8509677 })
   const [visibleInfo, setVisibleInfo] = useState(false)
   const [activeMarker, setActiveMarker] = useState({})
-  const [locationName, setLocationName] = useState('Venue : renno rent car')
+  const [locationName, setLocationName] = useState('Location : Renno rent car')
 
   const clickShowOnMap = (valueLatlng, locationNamePar) => {
     setLatLng(valueLatlng)
@@ -14,7 +14,6 @@ const MapComponent = ({ google }) => {
   }
 
   const onMarkerClick = (props, marker, e) => {
-    console.log(marker)
     setActiveMarker(marker)
     setVisibleInfo(true)
   }
@@ -49,7 +48,7 @@ const MapComponent = ({ google }) => {
                 <br />
                   Pancoran - Jakarta selatan
                 </h4>
-                <button className="btn btn-primary" onClick={() => clickShowOnMap({ lat: -6.2446969, lng: 106.8509677 }, 'Venue : renno rent car')} >Show on map</button>
+                <button className="btn btn-primary" onClick={() => clickShowOnMap({ lat: -6.2446969, lng: 106.8509677 }, 'Location : Renno rent car')} >Show on map</button>
               </div>
               <div className="col-6 col-md-12 location-container">
                 <h3 className="location-title">Parking area</h3>

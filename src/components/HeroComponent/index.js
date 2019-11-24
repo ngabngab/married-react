@@ -5,6 +5,14 @@ import BgHero1920 from '../../assets/img/bg-1920.jpg'
 import BgHero375 from '../../assets/img/bg-175.jpg'
 
 const HeroComponent = () => {
+
+  const clickButton  = () => {
+    const mapSection = document.querySelector('.map-section')
+    mapSection.scrollIntoView({
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <React.Fragment>
       <section className="hero-container">
@@ -22,7 +30,7 @@ const HeroComponent = () => {
                 <h2 className="subtitle">Saturday, 7 december 2019</h2>
               </div>
               <div className="col-12">
-                <button className="btn btn-primary">Go to location</button>
+                <button className="btn btn-primary" onClick={ clickButton }>Go to location</button>
               </div>
             </div>
           </div>
