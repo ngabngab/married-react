@@ -11,4 +11,14 @@
         background-color: var(--color-green-primary);
         border: none;
     }
+
+    &.btn-secondary {
+        color: var(--color-green-primary);
+        background-color: var(--color-cream-white);
+        border: none;
+    }
+}
+
+a.btn {
+    text-decoration: none;
 }

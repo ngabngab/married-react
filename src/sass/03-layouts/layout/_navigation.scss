@@ -1,0 +1,72 @@
+.nav-top {
+    display: flex;
+    justify-content: flex-end;
+    .nav-list {
+        list-style: none;
+        display: flex;
+        margin-left: calculateRem(-28px);
+        margin-right: calculateRem(-28px);
+        .nav-list-item {
+            font-weight: normal;
+            font-size: calculateRem(28px);
+            color: var(--color-cream-white);
+            padding-left: calculateRem(28px);
+            padding-right: calculateRem(28px);  
+        }
+        &.desktop {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        &.mobile {
+            display: none;
+            margin: 0;
+            @include media-breakpoint-down(sm) {
+                display: flex;
+            }
+            .nav-list-item {
+                padding-left: 0;
+                padding-right: 0;
+                &.hamburger-menu {
+                    width: 32px;
+                    height: 28px;
+                    padding: 0;
+                    position: relative;
+                    .btn-hamburger{
+                        position: relative;
+                        background-color: transparent;
+                        border: none;
+                        width: calculateRem(32px);
+                        height: calculateRem(28px);
+                        .line {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 100%;
+                            height: 2px;
+                            background-color: var(--color-cream-white);
+                            &:nth-child(1) {
+                                top: 0;
+                                width: 100%;
+                            }
+
+                            &:nth-child(2) {
+                                top: calculateRem(10px);
+                                width: 60%;
+                            }
+
+                            &:nth-child(3) {
+                                top: calculateRem(20px);
+                                width: 80%;
+                            }
+                        }
+                    }
+                    .line {
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,6 +4,12 @@
     top: 0;
     backdrop-filter: blur(10px);
     padding: calculateRem(40px) 0;
+    box-shadow: none;
+    transition: box-shadow 300ms ease-in-out;
+    &.on-scroll {
+        box-shadow: 8px 10px 24px -6px rgba(15,14,15,1);
+        transition: box-shadow 300ms ease-in-out;
+    }
     @include media-breakpoint-down(md) {
         &::before {
             content: '';

@@ -28,7 +28,7 @@ const MapComponent = ({ google }) => {
   const mapStyles = {
     width: '100%',
     height: '100%',
-    minHeight: `${ 320/16 }rem`
+    minHeight: `${320 / 16}rem`
   };
 
   return (
@@ -76,10 +76,19 @@ const MapComponent = ({ google }) => {
                 <Marker position={latlng} onClick={onMarkerClick} />
                 <InfoWindow visible={visibleInfo} marker={activeMarker} closeWindow={onCloseInfoWindow}>
                   <div className="info-map-window">
-                    <span>{ locationName }</span>
+                    <span>{locationName}</span>
                   </div>
                 </InfoWindow>
               </Map>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4 row"></div>
+            <div className="col-md-8 cta-map">
+              <a href="https://www.google.com/maps/place/Renno+Rent+Car/@-6.2446916,106.848779,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3bafcdbd32f:0xe4cdf223b521ea70!8m2!3d-6.2446969!4d106.8509677"
+                target="_blank"
+                className="btn btn-secondary"
+              >Open at google map</a>
             </div>
           </div>
         </div>

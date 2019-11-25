@@ -60,12 +60,13 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding-top: calculateRem(32px);
-    padding-bottom: calculateRem(32px);
+    padding-top: 6rem;
+    padding-bottom: 2rem;
     @include media-breakpoint-down(md) {
         position: relative;
         top: unset;
         transform: unset;
+        padding-top: 3rem;
     }
     .title {
         margin-bottom: calculateRem(16px);

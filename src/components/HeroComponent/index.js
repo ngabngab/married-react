@@ -27,7 +27,7 @@ const HeroComponent = () => {
                 <h1 className="title">We're getting married</h1>
               </div>
               <div className="col-12">
-                <h2 className="subtitle">Saturday, 7 december 2019</h2>
+                <h2 className="subtitle">Saturday, 7 december 2019<br />08:00 - 17:00 WIB</h2>
               </div>
               <div className="col-12">
                 <button className="btn btn-primary" onClick={ clickButton }>Go to location</button>
