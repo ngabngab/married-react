@@ -88,6 +88,7 @@ const MapComponent = ({ google }) => {
               <a href="https://www.google.com/maps/place/Renno+Rent+Car/@-6.2446916,106.848779,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3bafcdbd32f:0xe4cdf223b521ea70!8m2!3d-6.2446969!4d106.8509677"
                 target="_blank"
                 className="btn btn-secondary"
+                rel="noopener noreferrer"
               >Open at google map</a>
             </div>
           </div>
@@ -98,5 +99,5 @@ const MapComponent = ({ google }) => {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCxPdnzawXz9oicVtRUfVitMpHngu8mO6o'
+  apiKey: process.env.REACT_APP_GOOGLE_API
 })(MapComponent);
