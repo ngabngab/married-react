@@ -9,26 +9,48 @@ const HomePage = () => {
   const preLoadingScreenContainer = useRef();
 
   const [imgOpener, setImageOpener] = useState(true)
+  const [domElement, setDomElement] = useState(null)
+  const [menuMapActive, setMenuMapActive] = useState(false)
+
 
   useEffect(() => {
     setTimeout(() => {
-      preLoadingScreenContainer.current.classList.add('zoom-out')
+      imgOpener && preLoadingScreenContainer.current.classList.add('zoom-out')
       setTimeout(() => {
         setImageOpener(false)
       }, 2000)
     }, 6000);
-  }, [])
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if(entry.intersectionRatio >= 0.5 ) {
+          setMenuMapActive(true)
+        } else {
+          setMenuMapActive(false)
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+      }
+    )
+
+    if(domElement) {
+      observer.observe(domElement)
+    }
+  })
 
   return (
     <React.Fragment>
-      {!imgOpener ? <HeaderNav /> : ''}
+      {!imgOpener ? <HeaderNav  menuMapActive={ menuMapActive } /> : ''}
       <main>
         {imgOpener ? <div className="pre-loading-screen" ref={preLoadingScreenContainer}>
           <NameIconSvg />
         </div> :
           <React.Fragment>
             <HeroComponent />
-            <MapComponent />
+            <MapComponent setDomElement={setDomElement} />
           </React.Fragment>
         }
       </main>

@@ -56,7 +56,10 @@
             margin-top: calculateRem(32px);
         }
         > div {
-            width: calc(100% - 24px)!important;
+            width: calc(100%)!important;
+            @include media-breakpoint-down(sm) {
+                width: calc(100% - 24px)!important;
+            }
         }
     }
 }

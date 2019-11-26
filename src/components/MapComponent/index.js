@@ -1,12 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 
-const MapComponent = ({ google }) => {
+const MapComponent = ({ google, setDomElement }) => {
 
   const [latlng, setLatLng] = useState({ lat: -6.2446969, lng: 106.8509677 })
   const [visibleInfo, setVisibleInfo] = useState(false)
   const [activeMarker, setActiveMarker] = useState({})
   const [locationName, setLocationName] = useState('Location : Renno rent car')
+  const mapContainer = useRef()
+
+  const initialObserver = () => {
+    if(mapContainer) {
+      setDomElement(mapContainer.current)
+    }
+  }
+
 
   const clickShowOnMap = (valueLatlng, locationNamePar) => {
     setLatLng(valueLatlng)
@@ -31,9 +39,13 @@ const MapComponent = ({ google }) => {
     minHeight: `${320 / 16}rem`
   };
 
+  useEffect(() => {
+    initialObserver()
+  })
+
   return (
     <React.Fragment>
-      <section className="map-section">
+      <section className="map-section" ref={ mapContainer }>
         <div className="container map-container">
           <div className="row">
             <div className="col-md-4 row">

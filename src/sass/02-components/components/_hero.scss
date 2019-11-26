@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     height: 100vh;
-    margin-top: calculateRem(-126px);
+    margin-top: calculateRem(-100px);
     @include media-breakpoint-down(md) {
         margin-top: 0;
         height: 100%;
