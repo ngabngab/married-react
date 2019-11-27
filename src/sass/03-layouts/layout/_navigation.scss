@@ -111,10 +111,12 @@
                     height: 100vh;
                     background-color: var(--color-blue-primary);
                     top: 0;
-                    left: 100vw;
+                    right: 0;
                     transition: all 400ms ease-in-out;
+                    max-width: 0;
+                    overflow: hidden;
                     &.is-active {
-                        left: 0;
+                        max-width: 1000px;
                         transition: all 400ms ease-in-out;
                     }
                 }

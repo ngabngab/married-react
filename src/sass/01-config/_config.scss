@@ -1,9 +1,11 @@
-@import 'css-reset/css-reset';
+
 @import 'variables/color';
 @import 'variables/breakpoint';
 
 @import 'mixins/mixin-breakpoint';
 @import 'mixins/mixin-grid';
 @import 'mixins/mixin';
+
+@import 'css-reset/css-reset';
 
 @import 'animation/animation';

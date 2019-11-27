@@ -6,6 +6,7 @@
     @include media-breakpoint-down(md) {
         margin-top: 0;
         height: 100%;
+        min-height: calculateRem(400px);
     }
 
     .img-wrapper {
@@ -22,7 +23,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            background: transparent linear-gradient(90deg, #342D2DE6 0%, #77727270 100%);
+            background: transparent linear-gradient(90deg, rgba(#342D2D, 0.9) 0%, rgba(#777272, 0.8) 100%);
             z-index: 2;
             animation: opacityAnimation 2s ease-out forwards;
         }
@@ -47,9 +48,8 @@
         z-index: 1;
         object-position: top right;
         background-color: var(--color-black);
-
         @include media-breakpoint-down(md) {
-            object-fit: contain;
+            object-position: bottom right;
         }
     }
 }
@@ -68,10 +68,17 @@
         transform: unset;
         padding-top: 3rem;
     }
+    @include media-breakpoint-down(xs) {
+        display: flex;
+        align-items: center;
+    }
     .title {
         margin-bottom: calculateRem(16px);
         @include media-breakpoint-down(md) {
             margin-bottom: calculateRem(8px);
+        }
+        @include media-breakpoint-down(xs) {
+            text-align: center;
         }
     }
 
@@ -79,6 +86,15 @@
         margin-bottom: calculateRem(48px);
         @include media-breakpoint-down(md) {
             margin-bottom: calculateRem(20px);
+        }
+        @include media-breakpoint-down(xs) {
+            text-align: center;
+        }
+    }
+
+    .cta-container {
+        @include media-breakpoint-down(xs) {
+            text-align: center;
         }
     }
 }

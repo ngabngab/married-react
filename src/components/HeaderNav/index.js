@@ -8,7 +8,6 @@ const HeaderNav = ({ menuMapActive }) => {
   const bodyElement = document.querySelector('body')
 
   const onScrollWindow = (e) => {
-    console.log(e, 'beng')
     if (e.target.scrollingElement.scrollTop > 0) {
       setScroll(true)
     } else {
