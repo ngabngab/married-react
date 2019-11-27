@@ -62,7 +62,6 @@
             @include media-breakpoint-down(sm) {
                 display: flex;
                 align-items: center;
-                margin-top: 10px;
             }
 
             .hamburger-menu {
@@ -104,6 +103,31 @@
                     }
                 }
             }
+
+            .full-hamburger-menu {
+                @include media-breakpoint-down(sm) {
+                    position: fixed;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: var(--color-blue-primary);
+                    top: 0;
+                    left: 100vw;
+                    transition: all 400ms ease-in-out;
+                    &.is-active {
+                        left: 0;
+                        transition: all 400ms ease-in-out;
+                    }
+                }
+            }
         }
+    }
+}
+
+.menu-mobile {
+    list-style: none;
+    margin-top: 30vh;
+    .nav-list-item {
+        margin: calculateRem(24px) 0;
+        text-align: center;
     }
 }

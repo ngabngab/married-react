@@ -10,3 +10,9 @@
 :root {
     --font-handwriting: 'Dancing Script', cursive;
 }
+
+body {
+    &.menu-modal {
+        overflow-y: hidden;
+    }
+}

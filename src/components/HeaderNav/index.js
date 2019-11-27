@@ -1,12 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import logoSvg from '../../assets/img/logo.svg'
 
 const HeaderNav = ({ menuMapActive }) => {
 
-  const [onScroll, setScroll] = useState(false)
+  const [onScroll, setScroll] = useState(false);
+  const [menuResponsive, setMenuResponsive] = useState(false);
+  const bodyElement = document.querySelector('body')
 
   const onScrollWindow = (e) => {
-    if(e.target.scrollingElement.scrollTop > 0) {
+    console.log(e, 'beng')
+    if (e.target.scrollingElement.scrollTop > 0) {
       setScroll(true)
     } else {
       setScroll(false)
@@ -15,7 +18,7 @@ const HeaderNav = ({ menuMapActive }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', onScrollWindow)
-    return() => {
+    return () => {
       window.removeEventListener('scroll', onScrollWindow)
     }
   }, [])
@@ -34,6 +37,40 @@ const HeaderNav = ({ menuMapActive }) => {
     })
   }
 
+  const goToMapMobile = () => {
+    setMenuResponsive(false)
+    bodyElement.classList.toggle('menu-modal')
+    setTimeout(() => {
+      const mapSection = document.querySelector('.map-section')
+      mapSection.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }, 1000)
+  }
+
+  const goToHomeMobile = () => {
+    setMenuResponsive(false)
+    bodyElement.classList.toggle('menu-modal')
+    setTimeout(() => {
+      const homeSection = document.querySelector('body')
+      homeSection.scrollIntoView({
+        behavior: 'smooth'
+      })
+    }, 1000)
+  }
+
+  const closeMenu = () => {
+    bodyElement.classList.toggle('menu-modal')
+    setMenuResponsive(false)
+  }
+
+  const showMenu = () => {
+    bodyElement.classList.toggle('menu-modal')
+    setMenuResponsive(!menuResponsive)
+  }
+
+
+
   return (
     <React.Fragment>
       <header className={`header-top ${onScroll ? 'on-scroll' : ''}`}>
@@ -47,19 +84,26 @@ const HeaderNav = ({ menuMapActive }) => {
             <div className="col-8">
               <nav className="nav-top">
                 <ul className="nav-list desktop">
-                  <li className={ `nav-list-item ${menuMapActive ? '' : 'is-active' }` }><span onClick={ goToHome }>home</span></li>
-                  <li className={ `nav-list-item ${menuMapActive ? 'is-active' : '' }` }><span onClick={ goToMap }>location</span></li>
+                  <li className={`nav-list-item ${menuMapActive ? '' : 'is-active'}`}><span onClick={goToHome}>home</span></li>
+                  <li className={`nav-list-item ${menuMapActive ? 'is-active' : ''}`}><span onClick={goToMap}>location</span></li>
                 </ul>
                 <ul className="nav-list mobile">
                   <li className="hamburger-menu">
-                    <button className="btn-hamburger">
+                    <button className="btn-hamburger" onClick={showMenu}>
                       <span className="line"></span>
                       <span className="line"></span>
                       <span className="line"></span>
                     </button>
                   </li>
-                  <li className="full-hamburger-menu">
-                    
+                  <li className={`full-hamburger-menu ${menuResponsive ? 'is-active' : ''}`}>
+                    <button className="close" onClick={closeMenu}>
+                      <span className="line"></span>
+                      <span className="line"></span>
+                    </button>
+                    <ul className="menu-mobile">
+                      <li className={`nav-list-item ${menuMapActive ? '' : 'is-active'}`}><span onClick={goToHomeMobile}>home</span></li>
+                      <li className={`nav-list-item ${menuMapActive ? 'is-active' : ''}`}><span onClick={goToMapMobile}>location</span></li>
+                    </ul>
                   </li>
                 </ul>
               </nav>

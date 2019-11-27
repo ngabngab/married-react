@@ -3,9 +3,11 @@
     border-radius: 0.5rem;
     cursor: pointer;
     font-size: calculateRem(20px);
+
     @include media-breakpoint-down(xs) {
         font-size: 1rem;
     }
+
     &.btn-primary {
         color: var(--color-cream-white);
         background-color: var(--color-green-primary);
@@ -21,4 +23,33 @@
 
 a.btn {
     text-decoration: none;
+}
+
+.close {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width: calculateRem(32px);
+    height: calculateRem(32px);
+    top: 2rem;
+    right: 2rem;
+
+    .line {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-cream-white);
+
+        &:first-child {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(145deg);
+        }
+
+        &:last-child {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-145deg);
+        }
+    }
 }
