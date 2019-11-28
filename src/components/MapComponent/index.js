@@ -8,6 +8,7 @@ const MapComponent = ({ google, setDomElement }) => {
   const [activeMarker, setActiveMarker] = useState({})
   const [locationName, setLocationName] = useState('Location : Renno rent car')
   const mapContainer = useRef()
+  const mapWrapper = useRef()
 
   const initialObserver = () => {
     if(mapContainer) {
@@ -19,6 +20,10 @@ const MapComponent = ({ google, setDomElement }) => {
   const clickShowOnMap = (valueLatlng, locationNamePar) => {
     setLatLng(valueLatlng)
     setLocationName(locationNamePar)
+    const mapSection = document.querySelector('.map-wrapper')
+    mapSection.scrollIntoView({
+      behavior: 'smooth'
+    })
   }
 
   const onMarkerClick = (props, marker, e) => {
@@ -49,7 +54,7 @@ const MapComponent = ({ google, setDomElement }) => {
         <div className="container map-container">
           <div className="row">
             <div className="col-md-4 row">
-              <div className="col-6 col-md-12 location-container">
+              <div className="col-12 col-md-12 location-container">
                 <h3 className="location-title">Location</h3>
                 <h4 className="location-detail">
                   Renno rent car
@@ -62,21 +67,21 @@ const MapComponent = ({ google, setDomElement }) => {
                 </h4>
                 <button className="btn btn-primary" onClick={() => clickShowOnMap({ lat: -6.2446969, lng: 106.8509677 }, 'Location : Renno rent car')} >Show on map</button>
               </div>
-              <div className="col-6 col-md-12 location-container">
+              <div className="col-12 col-md-12 location-container">
                 <h3 className="location-title">Parking area</h3>
                 <h4 className="location-detail">
                   Gedung MLI
                 <br />
                   Jl. Letjen M.T. Haryono
                 <br />
-                  No.Kav. 49, Cikoko
+                  Kav. 49, Cikoko
                 <br />
                   Pancoran - Jakarta selatan
                 </h4>
                 <button className="btn btn-primary" onClick={() => clickShowOnMap({ lat: -6.2437293, lng: 106.8505825 }, 'Parking area : Gedung MLI')} >Show on map</button>
               </div>
             </div>
-            <div className="col-md-8 map-wrapper">
+            <div className="col-md-8 map-wrapper" ref={ mapWrapper }>
               <Map
                 google={google}
                 zoom={18}
@@ -95,8 +100,7 @@ const MapComponent = ({ google, setDomElement }) => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4 row"></div>
-            <div className="col-md-8 cta-map">
+            <div className="col-12 cta-map">
               <a href="https://www.google.com/maps/place/Renno+Rent+Car/@-6.2446916,106.848779,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3bafcdbd32f:0xe4cdf223b521ea70!8m2!3d-6.2446969!4d106.8509677"
                 target="_blank"
                 className="btn btn-secondary"

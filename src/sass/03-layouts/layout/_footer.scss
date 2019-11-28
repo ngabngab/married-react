@@ -1,0 +1,10 @@
+.footer-container {
+    height: calculateRem(64px);
+    background-color: var(--color-black);
+    display: flex;
+    align-items: center;
+    .copyright {
+        color: var(--color-blue-white);
+        font-size: calculateRem(20px);
+    }
+}

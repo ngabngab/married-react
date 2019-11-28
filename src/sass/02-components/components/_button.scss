@@ -2,22 +2,38 @@
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: calculateRem(20px);
+    font-size: calculateRem(24px);
+    font-weight: bold;
 
-    @include media-breakpoint-down(xs) {
-        font-size: 1rem;
-    }
 
     &.btn-primary {
-        color: var(--color-cream-white);
-        background-color: var(--color-green-primary);
+        color: var(--color-blue-accent);
+        background-color: var(--color-blue-white);
         border: none;
+        box-shadow: none;
+        transform: translateY(0);
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 10px 24px -6px rgba(15,14,15,1);
+            transition: all 300ms ease-in-out;
+        }
     }
 
     &.btn-secondary {
-        color: var(--color-green-primary);
-        background-color: var(--color-cream-white);
+        color: var(--color-blue-accent);
+        background-color: var(--color-blue-white);
         border: none;
+        box-shadow: none;
+        transform: translateY(0);
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 10px 24px -6px rgba(15,14,15,1);
+            transition: all 300ms ease-in-out;
+        }
     }
 }
 

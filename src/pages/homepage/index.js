@@ -51,6 +51,15 @@ const HomePage = () => {
           <React.Fragment>
             <HeroComponent />
             <MapComponent setDomElement={setDomElement} />
+            <footer className="footer-container">
+              <div className="container">
+                <div className="row">
+                  <div className="col-12">
+                    <span className="copyright"></span>
+                  </div>
+                </div>
+              </div>
+            </footer>
           </React.Fragment>
         }
       </main>
